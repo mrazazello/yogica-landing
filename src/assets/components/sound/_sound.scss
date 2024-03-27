@@ -1,0 +1,84 @@
+.sound {
+	background-color: aliceblue;
+
+	background-image: url('../img/sound-bg.png');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	&__container {
+		max-width: 990px;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		@media screen and (max-width: 992px) {
+			gap: 30px;
+		}
+	}
+
+	&__title {
+		font-family: var(--second-family);
+		font-weight: 300;
+		font-size: 70px;
+		line-height: 0.95;
+		letter-spacing: -0.02em;
+		text-align: center;
+		color: #000;
+		@media screen and (max-width: 992px) {
+			font-size: 60px;
+		}
+		@media screen and (max-width: 768px) {
+			font-size: 32px;
+		}
+	}
+
+	&__subtitle {
+		max-width: 785px;
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 21px;
+		line-height: 1.4;
+		text-align: center;
+		color: #000;
+		@media screen and (max-width: 992px) {
+			font-size: 18px;
+		}
+	}
+}
+.section {
+	padding: 100px 0;
+	@media screen and (max-width: 992px) {
+		padding: 60px 0;
+	}
+	@media screen and (max-width: 768px) {
+		padding: 30px 0;
+	}
+}
+
+.cite {
+	margin: 0;
+	display: block;
+
+	border: 2px solid #377cba;
+	border-radius: 20px;
+
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 34px;
+	line-height: 1.25;
+	text-align: center;
+	color: #377cba;
+
+	padding: 40px 50px;
+	@media screen and (max-width: 992px) {
+		padding: 20px 15px;
+		font-size: 26px;
+	}
+	@media screen and (max-width: 768px) {
+		font-size: 22px;
+		padding: 10px 10px;
+	}
+}
