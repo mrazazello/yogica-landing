@@ -1,3 +1,35 @@
-<header class="header">
-	<div class="header__container container"></div>
+<header class="header header_absolute">
+	<div class="header__container container">
+		<a class="logo">
+			<img
+				width="151"
+				height="39"
+				src="./assets/img/svg/logo.svg"
+				alt="yogica"
+			/>
+		</a>
+		<div class="header__actions">
+			<nav class="header__nav nav">
+				<ul class="menu list-reset">
+					<li>
+						<a href="#" class="menu__link underline">О терапии</a>
+					</li>
+					<li>
+						<a href="#" class="menu__link underline">Цели </a>
+					</li>
+					<li>
+						<a href="#" class="menu__link underline">Стоимость</a>
+					</li>
+					<li>
+						<a href="#" class="menu__link underline">Отзывы</a>
+					</li>
+					<li>
+						<a href="#" class="menu__link underline">Об авторе</a>
+					</li>
+				</ul>
+			</nav>
+			<button class="header__btn btn-reset">Начать сессию</button>
+		</div>
+		@include('../burger/burger.html')
+	</div>
 </header>
