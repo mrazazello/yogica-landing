@@ -17,15 +17,10 @@ overlay.addEventListener('click', () => {
 	body.classList.remove('no-scroll');
 });
 
-const swiper = new Swiper('.session__carousel', {
-	// If we need pagination
+const sessionSlider = new Swiper('.session__carousel', {
 	slidesPerView: 1,
 	spaceBetween: 10,
-	pagination: {
-		el: '.swiper-pagination',
-	},
 
-	// Navigation arrows
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
@@ -39,6 +34,23 @@ const swiper = new Swiper('.session__carousel', {
 		992: {
 			slidesPerView: 6,
 			spaceBetween: 20,
+		},
+	},
+});
+
+const feedbackSlider = new Swiper('.feedback__carousel', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+
+	breakpoints: {
+		992: {
+			slidesPerView: 3,
+			spaceBetween: 26,
 		},
 	},
 });
