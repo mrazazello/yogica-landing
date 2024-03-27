@@ -20,19 +20,7 @@
 	}
 
 	&__title {
-		font-family: var(--second-family);
-		font-weight: 300;
-		font-size: 70px;
-		line-height: 0.95;
-		letter-spacing: -0.02em;
-		text-align: center;
-		color: #000;
-		@media screen and (max-width: 992px) {
-			font-size: 60px;
-		}
-		@media screen and (max-width: 768px) {
-			font-size: 32px;
-		}
+		color: var(--black);
 	}
 
 	&__subtitle {

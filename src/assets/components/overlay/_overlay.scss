@@ -6,18 +6,19 @@
 
 	width: 100%;
 	height: 100vh;
-	opacity: 0;
 
-	pointer-events: none;
+	opacity: 0;
+	visibility: hidden;
 
 	background-color: rgba(0, 0, 0, 0.5);
 
 	transition:
 		background-color 300ms ease-in-out,
-		opacity 300ms ease-in-out;
+		opacity 300ms ease-in-out,
+		visibility 300ms ease-in-out;
 
 	&.active {
 		opacity: 1;
-		pointer-events: auto;
+		visibility: visible;
 	}
 }

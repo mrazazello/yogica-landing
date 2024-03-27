@@ -42,20 +42,10 @@
 	}
 
 	&__title {
-		font-family: var(--second-family);
 		font-weight: 200;
 		font-size: 120px;
-		line-height: 0.95;
 		letter-spacing: -0.03em;
-		text-align: center;
-		color: #fff;
-
-		@media screen and (max-width: 1150px) {
-			font-size: 60px;
-		}
-		@media screen and (max-width: 768px) {
-			font-size: 32px;
-		}
+		color: var(--white);
 	}
 
 	&__subtitle {
