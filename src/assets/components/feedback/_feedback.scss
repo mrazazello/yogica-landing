@@ -82,6 +82,9 @@
 	min-height: 370px;
 	border-radius: 15px;
 	overflow: hidden;
+	@media screen and (max-width: 575px) {
+		min-height: 330px;
+	}
 
 	&::before {
 		content: '';
