@@ -55,25 +55,43 @@ const feedbackSlider = new Swiper('.feedback__carousel', {
 	},
 });
 
-const modalTriggers = document.querySelectorAll("[data-trigger='modal']");
-const modalCloseBtn = document.querySelector('.form-card__btn');
-const modal = document.querySelector('.modal');
+const formModalTriggers = document.querySelectorAll(
+	'[data-trigger="form-modal"]'
+);
+const formModalCloseBtn = document.querySelector('.form-card__btn');
+const formModal = document.querySelector('[data-id="form-modal"]');
 
-modalTriggers.forEach(modalTrigger => {
-	modalTrigger.addEventListener('click', () => {
-		modal.classList.add('active');
+formModalTriggers.forEach(trigger => {
+	trigger.addEventListener('click', () => {
+		formModal.classList.add('active');
 		body.classList.add('no-scroll');
 	});
 });
 
-modal.addEventListener('click', e => {
-	if (e.target === modal) {
-		modal.classList.remove('active');
+formModal.addEventListener('click', e => {
+	if (e.target === formModal) {
+		formModal.classList.remove('active');
 		body.classList.remove('no-scroll');
 	}
 });
 
-modalCloseBtn.addEventListener('click', () => {
-	modal.classList.remove('active');
+formModalCloseBtn.addEventListener('click', () => {
+	formModal.classList.remove('active');
 	body.classList.remove('no-scroll');
+});
+
+const youtubeModalTriggers = document.querySelectorAll(
+	'[data-trigger="youtube-modal"]'
+);
+const youtubeModal = document.querySelector('[data-id="youtube-modal"]');
+
+youtubeModalTriggers.forEach(trigger => {
+	trigger.addEventListener('click', () => {
+		youtubeModal.classList.add('active');
+		body.classList.add('no-scroll');
+	});
+});
+
+youtubeModal.addEventListener('click', e => {
+	youtubeModal.classList.remove('active');
 });
