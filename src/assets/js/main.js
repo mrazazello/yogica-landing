@@ -3,6 +3,10 @@ const mobileMenu = document.querySelector('.header__actions');
 const overlay = document.querySelector('.overlay');
 const body = document.body;
 
+const youtubeModal = document.querySelector('[data-id="youtube-modal"]');
+const formModal = document.querySelector('[data-id="form-modal"]');
+const iframe = document.querySelector('.video-box__iframe');
+
 const elements = [burger, mobileMenu, overlay];
 
 burger.addEventListener('click', () => {
@@ -14,6 +18,46 @@ overlay.addEventListener('click', () => {
 	elements.forEach(elem => elem.classList.remove('active'));
 	body.classList.remove('no-scroll');
 });
+
+Array.from(document.querySelectorAll('[data-trigger="form-modal"]')).forEach(
+	trigger => {
+		trigger.addEventListener('click', () => {
+			openModal(formModal);
+		});
+	}
+);
+
+formModal.addEventListener('click', e => {
+	if (e.target === formModal || e.target.closest('.form-card__btn')) {
+		closeModal(formModal);
+	}
+});
+
+Array.from(document.querySelectorAll('[data-trigger="youtube-modal"]')).forEach(
+	trigger => {
+		trigger.addEventListener('click', () => {
+			openModal(youtubeModal);
+
+			iframe.src = trigger.dataset.src;
+		});
+	}
+);
+
+youtubeModal.addEventListener('click', e => {
+	closeModal(youtubeModal);
+
+	iframe.src = '';
+});
+
+const openModal = modal => {
+	modal.classList.add('active');
+	body.classList.add('no-scroll');
+};
+
+const closeModal = modal => {
+	modal.classList.remove('active');
+	body.classList.remove('no-scroll');
+};
 
 const sessionSlider = new Swiper('.session__carousel', {
 	slidesPerView: 1,
@@ -51,45 +95,4 @@ const feedbackSlider = new Swiper('.feedback__carousel', {
 			spaceBetween: 26,
 		},
 	},
-});
-
-const formModalTriggers = document.querySelectorAll(
-	'[data-trigger="form-modal"]'
-);
-const formModal = document.querySelector('[data-id="form-modal"]');
-
-formModalTriggers.forEach(trigger => {
-	trigger.addEventListener('click', () => {
-		formModal.classList.add('active');
-		body.classList.add('no-scroll');
-	});
-});
-
-formModal.addEventListener('click', e => {
-	if (e.target === formModal || e.target.closest('.form-card__btn')) {
-		formModal.classList.remove('active');
-		body.classList.remove('no-scroll');
-	}
-});
-
-const youtubeModalTriggers = document.querySelectorAll(
-	'[data-trigger="youtube-modal"]'
-);
-const youtubeModal = document.querySelector('[data-id="youtube-modal"]');
-const iframe = document.querySelector('.video-box__iframe');
-
-youtubeModalTriggers.forEach(trigger => {
-	trigger.addEventListener('click', () => {
-		youtubeModal.classList.add('active');
-		body.classList.add('no-scroll');
-
-		iframe.src = trigger.dataset.src;
-	});
-});
-
-youtubeModal.addEventListener('click', e => {
-	youtubeModal.classList.remove('active');
-	body.classList.remove('no-scroll');
-
-	iframe.src = '';
 });
