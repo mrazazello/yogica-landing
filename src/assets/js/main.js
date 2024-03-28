@@ -54,3 +54,26 @@ const feedbackSlider = new Swiper('.feedback__carousel', {
 		},
 	},
 });
+
+const modalTriggers = document.querySelectorAll("[data-trigger='modal']");
+const modalCloseBtn = document.querySelector('.form-card__btn');
+const modal = document.querySelector('.modal');
+
+modalTriggers.forEach(modalTrigger => {
+	modalTrigger.addEventListener('click', () => {
+		modal.classList.add('active');
+		body.classList.add('no-scroll');
+	});
+});
+
+modal.addEventListener('click', e => {
+	if (e.target === modal) {
+		modal.classList.remove('active');
+		body.classList.remove('no-scroll');
+	}
+});
+
+modalCloseBtn.addEventListener('click', () => {
+	modal.classList.remove('active');
+	body.classList.remove('no-scroll');
+});

@@ -1,0 +1,68 @@
+<div class="modal">
+	<div class="form-card">
+		<button
+			type="button"
+			class="form-card__btn btn-reset"
+			aria-hidden="закрыть модальное окно"
+		>
+			<img src="./assets/img/svg/close.svg" class="form-card__btn-icon" />
+		</button>
+		<div class="form-card__title">Начать сессию</div>
+		<div class="form-card__subtitle">
+			Наш менеджер свяжется с вами в течении 24 часов
+		</div>
+		<form action="#" class="form">
+			<div class="form__fields">
+				<div class="form-field">
+					<input
+						required
+						type="text"
+						name="surname"
+						class="form-field__input"
+						placeholder="Фамилия"
+					/>
+				</div>
+				<div class="form-field">
+					<input
+						required
+						type="text"
+						name="name"
+						class="form-field__input"
+						placeholder="Имя"
+					/>
+				</div>
+				<div class="form-field">
+					<input
+						required
+						type="number"
+						name="phone"
+						class="form-field__input"
+						placeholder="+7 911 402-66-53"
+					/>
+				</div>
+				<div class="form-field">
+					<input
+						type="email"
+						name="email"
+						class="form-field__input"
+						placeholder="Адрес электронной почты"
+					/>
+				</div>
+			</div>
+			<div class="form__politic">
+				<label class="checkbox">
+					<input type="checkbox" checked required />
+					<span class="checkbox__checkmark"></span>
+				</label>
+				<p class="form__text">
+					я принимаю
+					<a class="form__link" href="#"
+						>политику обработки персональных данных</a
+					>
+					и <a class="form__link" href="#">условия конфиденциальности</a>
+				</p>
+			</div>
+			<button type="submit" class="btn btn-reset form__btn">Отправить</button>
+		</form>
+	</div>
+</div>
