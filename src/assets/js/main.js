@@ -80,18 +80,22 @@ formModalCloseBtn.addEventListener('click', () => {
 	body.classList.remove('no-scroll');
 });
 
+//
 const youtubeModalTriggers = document.querySelectorAll(
 	'[data-trigger="youtube-modal"]'
 );
 const youtubeModal = document.querySelector('[data-id="youtube-modal"]');
-
 youtubeModalTriggers.forEach(trigger => {
 	trigger.addEventListener('click', () => {
 		youtubeModal.classList.add('active');
 		body.classList.add('no-scroll');
+
+		const iframe = (document.querySelector('.video-box__iframe').src =
+			trigger.dataset.src);
 	});
 });
 
 youtubeModal.addEventListener('click', e => {
 	youtubeModal.classList.remove('active');
+	const iframe = (document.querySelector('.video-box__iframe').src = '');
 });
