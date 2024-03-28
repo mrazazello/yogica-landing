@@ -80,6 +80,7 @@ formModalCloseBtn.addEventListener('click', () => {
 	body.classList.remove('no-scroll');
 });
 
+const iframe = document.querySelector('.video-box__iframe');
 //
 const youtubeModalTriggers = document.querySelectorAll(
 	'[data-trigger="youtube-modal"]'
@@ -90,13 +91,12 @@ youtubeModalTriggers.forEach(trigger => {
 		youtubeModal.classList.add('active');
 		body.classList.add('no-scroll');
 
-		const iframe = (document.querySelector('.video-box__iframe').src =
-			trigger.dataset.src);
+		iframe.src = trigger.dataset.src;
 	});
 });
 
 youtubeModal.addEventListener('click', e => {
 	youtubeModal.classList.remove('active');
-	const iframe = (document.querySelector('.video-box__iframe').src = '');
+	iframe.src = '';
 	body.classList.remove('no-scroll');
 });
