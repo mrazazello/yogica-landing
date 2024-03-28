@@ -98,4 +98,5 @@ youtubeModalTriggers.forEach(trigger => {
 youtubeModal.addEventListener('click', e => {
 	youtubeModal.classList.remove('active');
 	const iframe = (document.querySelector('.video-box__iframe').src = '');
+	body.classList.remove('no-scroll');
 });
