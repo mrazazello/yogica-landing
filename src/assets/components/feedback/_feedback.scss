@@ -10,6 +10,12 @@
 	}
 
 	&__carousel {
+		.swiper-button-next,
+		.swiper-button-prev {
+			&::after {
+				background-color: #dad6d6;
+			}
+		}
 		.swiper-slide {
 			display: grid;
 			place-items: center;
@@ -74,6 +80,28 @@
 }
 
 .feedback-card {
+	&:hover {
+		scale: 1;
+
+		&::before {
+			opacity: 0;
+			visibility: hidden;
+		}
+		.feedback-card__title {
+			color: var(--white);
+		}
+		.feedback-card__text {
+			color: var(--white);
+		}
+		.star {
+			fill: #83ffd3;
+			stroke: #83ffd3;
+		}
+		.im,
+		.fb {
+			fill: #55d6a7;
+		}
+	}
 	display: flex;
 	max-width: 380px;
 	width: 100%;
@@ -97,8 +125,8 @@
 
 		background-color: rgba(255, 255, 255, 0.6);
 		transition:
-			opacity 150ms ease-in-out,
-			visibility 150ms ease-in-out;
+			opacity 300ms ease-in-out,
+			visibility 300ms ease-in-out;
 	}
 	&::after {
 		content: '';
@@ -136,7 +164,7 @@
 		font-size: 26px;
 		line-height: 1.1;
 		color: var(--black);
-		transition: color 150ms ease-in-out;
+		transition: color 300ms ease-in-out;
 	}
 
 	&__rating {
@@ -145,7 +173,7 @@
 	}
 
 	&__text {
-		transition: color 150ms ease-in-out;
+		transition: color 300ms ease-in-out;
 		font-family: var(--font-family);
 		font-weight: 500;
 		font-size: 17px;
@@ -154,6 +182,7 @@
 	}
 
 	&__socials {
+		padding-top: 10px;
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
@@ -161,6 +190,10 @@
 	}
 
 	&__social {
+		transition: scale 300ms ease-in-out;
+		@include hover {
+			scale: 1.1;
+		}
 	}
 }
 .star {
@@ -169,8 +202,8 @@
 	fill: transparent;
 	stroke: var(--black);
 	transition:
-		fill 150ms ease-in-out,
-		stroke 150ms ease-in-out;
+		fill 300ms ease-in-out,
+		stroke 300ms ease-in-out;
 	&_filled {
 		fill: var(--black);
 	}
@@ -178,7 +211,7 @@
 .icon {
 	width: 21px;
 	height: 21px;
-	transition: fill 150ms ease-in-out;
+	transition: fill 300ms ease-in-out;
 }
 
 .im {
