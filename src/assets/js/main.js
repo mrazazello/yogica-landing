@@ -3,17 +3,15 @@ const mobileMenu = document.querySelector('.header__actions');
 const overlay = document.querySelector('.overlay');
 const body = document.body;
 
+const elements = [burger, mobileMenu, overlay];
+
 burger.addEventListener('click', () => {
-	burger.classList.toggle('active');
-	mobileMenu.classList.toggle('active');
-	overlay.classList.toggle('active');
+	elements.forEach(elem => elem.classList.toggle('active'));
 	body.classList.toggle('no-scroll');
 });
 
 overlay.addEventListener('click', () => {
-	burger.classList.remove('active');
-	mobileMenu.classList.remove('active');
-	overlay.classList.remove('active');
+	elements.forEach(elem => elem.classList.remove('active'));
 	body.classList.remove('no-scroll');
 });
 
@@ -58,7 +56,6 @@ const feedbackSlider = new Swiper('.feedback__carousel', {
 const formModalTriggers = document.querySelectorAll(
 	'[data-trigger="form-modal"]'
 );
-const formModalCloseBtn = document.querySelector('.form-card__btn');
 const formModal = document.querySelector('[data-id="form-modal"]');
 
 formModalTriggers.forEach(trigger => {
@@ -69,23 +66,18 @@ formModalTriggers.forEach(trigger => {
 });
 
 formModal.addEventListener('click', e => {
-	if (e.target === formModal) {
+	if (e.target === formModal || e.target.closest('.form-card__btn')) {
 		formModal.classList.remove('active');
 		body.classList.remove('no-scroll');
 	}
 });
 
-formModalCloseBtn.addEventListener('click', () => {
-	formModal.classList.remove('active');
-	body.classList.remove('no-scroll');
-});
-
-const iframe = document.querySelector('.video-box__iframe');
-//
 const youtubeModalTriggers = document.querySelectorAll(
 	'[data-trigger="youtube-modal"]'
 );
 const youtubeModal = document.querySelector('[data-id="youtube-modal"]');
+const iframe = document.querySelector('.video-box__iframe');
+
 youtubeModalTriggers.forEach(trigger => {
 	trigger.addEventListener('click', () => {
 		youtubeModal.classList.add('active');
@@ -97,6 +89,7 @@ youtubeModalTriggers.forEach(trigger => {
 
 youtubeModal.addEventListener('click', e => {
 	youtubeModal.classList.remove('active');
-	iframe.src = '';
 	body.classList.remove('no-scroll');
+
+	iframe.src = '';
 });
