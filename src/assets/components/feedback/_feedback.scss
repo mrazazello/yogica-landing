@@ -16,6 +16,16 @@
 				background-color: #dad6d6;
 			}
 		}
+		.swiper-button-prev {
+			@media screen and (max-width: 575px) {
+				left: 4px;
+			}
+		}
+		.swiper-button-next {
+			@media screen and (max-width: 575px) {
+				right: 4px;
+			}
+		}
 		.swiper-slide {
 			display: grid;
 			place-items: center;
@@ -112,6 +122,7 @@
 	overflow: hidden;
 	@media screen and (max-width: 575px) {
 		min-height: 330px;
+		padding: 10px 40px 20px 40px;
 	}
 
 	&::before {
@@ -179,6 +190,9 @@
 		font-size: 17px;
 		line-height: 1.2;
 		color: #333;
+		@media screen and (max-width: 575px) {
+			font-size: 16px;
+		}
 	}
 
 	&__socials {
