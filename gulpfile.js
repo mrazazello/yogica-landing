@@ -37,16 +37,18 @@ const path = {
 		svg: distPath + 'assets/img/svg',
 		vendors: distPath + 'assets/vendors',
 		fonts: distPath + 'assets/fonts',
+		favicon: distPath + 'assets/favicon',
 	},
 	src: {
 		html: srcPath + '*.html',
 		css: srcPath + 'assets/scss/**/*.scss',
 		js: srcPath + 'assets/js/**/*.js',
-		img: srcPath + 'assets/**/*.{jpg,jpeg,png}',
+		img: srcPath + 'assets/**/*.{jpg,jpeg,png,webp}',
 		video: srcPath + 'assets/video/**/*',
 		svg: srcPath + 'assets/**/*.svg',
 		vendors: srcPath + 'assets/vendors/**/*.{css,js}',
 		fonts: srcPath + 'assets/fonts/**/*',
+		favicon: srcPath + 'assets/favicon/**/*',
 	},
 	clean: distPath,
 };
@@ -157,6 +159,12 @@ function fonts() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
+function favicon() {
+	return src(path.src.favicon)
+		.pipe(dest(path.build.favicon))
+		.pipe(browserSync.reload({ stream: true }));
+}
+
 // Minify
 
 function htmlMin() {
@@ -221,7 +229,8 @@ const dev = series(
 		svgToSprite,
 		svgNormal,
 		vendors,
-		fonts
+		fonts,
+		favicon
 	),
 	serve
 );
@@ -238,7 +247,8 @@ const build = series(
 		svgToSprite,
 		svgNormal,
 		vendors,
-		fonts
+		fonts,
+		favicon
 	)
 );
 
@@ -259,6 +269,7 @@ function watchFiles() {
 	watch([path.src.svg], svgNormal);
 	watch([path.src.vendors], vendors);
 	watch([path.src.fonts], fonts);
+	watch([path.src.favicon], favicon);
 	watch([srcPath + 'assets/public/**/*'], publicTask);
 }
 
@@ -278,6 +289,7 @@ exports.dev = dev;
 exports.build = build;
 exports.vendors = vendors;
 exports.fonts = fonts;
+exports.favicon = favicon;
 exports.publicTask = publicTask;
 exports.preview = preview;
 exports.watchFiles = watchFiles;

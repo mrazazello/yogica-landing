@@ -1,0 +1,23 @@
+.conent {
+	background-color: rgb(255, 255, 255);
+	background-image: url('../img/about-bg.png');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__container {
+		padding-left: 100px;
+		@media screen and (max-width: 768px) {
+			padding-left: 15px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 10px;
+
+		color: var(--black);
+		@media screen and (max-width: 768px) {
+			margin-bottom: 30px;
+		}
+	}
+}
