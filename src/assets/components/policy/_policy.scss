@@ -1,12 +1,9 @@
-.conent {
-	background-color: rgb(255, 255, 255);
-	background-image: url('../img/about-bg.png');
-	background-position: center center;
-	background-size: cover;
+.content {
+	background-color: rgb(255,238,238);
+	background-position: top;
 	background-repeat: no-repeat;
 
 	&__container {
-		padding-left: 100px;
 		@media screen and (max-width: 768px) {
 			padding-left: 15px;
 		}
@@ -19,5 +16,20 @@
 		@media screen and (max-width: 768px) {
 			margin-bottom: 30px;
 		}
+	}
+}
+
+.usercontent {
+
+	h5 {
+		font-size: 20px;
+	}
+
+	.bordered table {
+		border-collapse: collapse;
+	}
+
+	.bordered table, .bordered td, .bordered th {
+		border: 1px solid #7D4A4A;
 	}
 }

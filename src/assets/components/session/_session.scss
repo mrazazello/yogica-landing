@@ -124,7 +124,8 @@
 	}
 }
 
-.swiper {
+.session__carousel .swiper-wrapper {
+	justify-content: center;
 }
 
 .swiper-button-prev,
